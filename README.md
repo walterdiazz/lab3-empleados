@@ -72,9 +72,23 @@ empleados/
 Requisitos: Docker y Docker Compose.
 
 ```bash
-git clone <url-del-repositorio>
-cd empleados
+git clone https://github.com/walterdiazz/lab3-empleados.git
+cd lab3-empleados
 docker compose up --build
+```
+
+### Alternativa: un solo comando que además revisa/arranca Docker
+
+Si Docker Desktop no está corriendo, `docker compose up` falla. Los scripts `start.*` se encargan de eso automáticamente: verifican si Docker está listo, lo inician si hace falta (esperando hasta que el daemon responda) y luego levantan los contenedores.
+
+```powershell
+# Windows (PowerShell o doble clic en start.bat)
+.\start.bat
+```
+
+```bash
+# Linux / macOS
+./start.sh
 ```
 
 Esto levanta dos contenedores:
