@@ -77,18 +77,13 @@ cd lab3-empleados
 docker compose up --build
 ```
 
-### Alternativa: un solo comando que además revisa/arranca Docker
-
-Si Docker Desktop no está corriendo, `docker compose up` falla. Los scripts `start.*` se encargan de eso automáticamente: verifican si Docker está listo, lo inician si hace falta (esperando hasta que el daemon responda) y luego levantan los contenedores.
-
-```powershell
-# Windows (PowerShell o doble clic en start.bat)
-.\start.bat
-```
+Otros comandos útiles:
 
 ```bash
-# Linux / macOS
-./start.sh
+docker compose up --build -d   # en segundo plano
+docker compose logs -f         # ver logs si corrió con -d
+docker compose down            # detener los contenedores
+docker compose down -v         # detener y borrar también los datos
 ```
 
 Esto levanta dos contenedores:
